@@ -1,14 +1,12 @@
 import { SourceFile } from "ts-morph"
-import AstNode from "./AstNode";
+import renderNode from "./nodes/AstRender";
 
-interface AstSourceProps {
-    source: SourceFile
-}
-
-function AstSource({source}: AstSourceProps) {
+function AstSource({source}: {source: SourceFile}) {
 
     return <div className="AstSource">
-        {source.getChildren().map(node => <AstNode node={node} setNode={(node) => console.log(node)} />)}
+        <ul>
+            {source.getChildren().map((node, index) => <li key={index}>{renderNode(node)}</li>)}
+        </ul>
     </div>
 
 }

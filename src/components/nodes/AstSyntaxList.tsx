@@ -1,12 +1,8 @@
 import { SyntaxList } from "ts-morph";
-import AstNode from "../AstNode";
+import renderNode from "./AstRender";
 
-interface AstSyntaxListProp {
-    node:SyntaxList
-}
-
-function AstSyntaxList({node}:AstSyntaxListProp) {
-    return <div>{node.getChildren().map(node => <AstNode node={node} setNode={(node) => console.log(node)} />)}</div>
+function AstSyntaxList({node}: {node:SyntaxList}) {
+    return <ul className="SyntaxList">{node.getChildren().map((node, index) => <li key={index}>{renderNode(node)}</li>)}</ul>
 }
 
 export default AstSyntaxList;

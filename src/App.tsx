@@ -4,7 +4,7 @@ import CodeEditor from './components/CodeEditor'
 import AstProgram from './components/AstProgram'
 
 function App() {
-  const [code, setCode] = useState("// paste code here")
+  const [code, setCode] = useState("// paste code here\n\nconst hello = \"oe\"")
   return (
     <>
       <h1>Astral: Hello!</h1>

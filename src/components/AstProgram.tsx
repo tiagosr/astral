@@ -15,7 +15,7 @@ function AstProgram({code}: AstProgramProps) {
 
     return <>
         <ul>
-            {sources.map(source => <AstSource key={source.getBaseNameWithoutExtension()} source={source} />)}
+            {sources.map((source, index) => <li key={index}><AstSource key={source.getBaseNameWithoutExtension()} source={source} /></li>)}
         </ul>
     </>
 }

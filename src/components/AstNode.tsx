@@ -1,30 +1,13 @@
-import { Node, SyntaxKind, SyntaxList, VariableStatement } from "ts-morph";
-import AstSyntaxList from "./nodes/AstSyntaxList";
-import AstVariableStatement from "./nodes/AstVariableStatement";
+import { Node } from "ts-morph";
+import renderNode from "./nodes/AstRender";
 
 interface AstNodeProps {
     node:Node,
-    setNode:(node:Node)=>void
+    setNode:(node:Node)=>void | undefined
 }
 
 function AstNode({node}: AstNodeProps) {
-    
-    const renderNode = (node:Node) => {
-        switch (node.getKind()) {
-            case SyntaxKind.SyntaxList:
-                return <AstSyntaxList node={node as SyntaxList} />;
-            case SyntaxKind.ConstKeyword:
-                return <div>const</div>;
-            case SyntaxKind.VariableStatement:
-                return <AstVariableStatement node={node as VariableStatement} />
-            default:
-                return <ul>
-                    <li>{node.getKindName()}</li>
-                    <li>{node.getText()}</li>
-                </ul>
-        }
-    }
-    
+   
     return <div className="AstNode">
         <div>{node.getKindName()}</div>
         {renderNode(node)}
