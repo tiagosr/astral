@@ -1,10 +1,8 @@
 import { ArrayBindingPattern } from "ts-morph";
 import renderNode from "./AstRender";
 
-function AstArrayBindingPattern({node}:{node:ArrayBindingPattern}) {
-    return <ul className="ArrayBindingPattern">{
-        node.getChildren().map((node, index) => <li key={index}>{renderNode(node)}</li>)
-    }</ul>;
+export default function AstArrayBindingPattern({node}:{node:ArrayBindingPattern}) {
+    return <div className="ArrayBindingPattern">{
+        node.getChildren().map((node, index) => <span key={index}>{renderNode(node)}</span>)
+    }</div>;
 }
-
-export default AstArrayBindingPattern;

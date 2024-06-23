@@ -1,7 +1,6 @@
 import { Identifier } from "ts-morph";
 
-function AstIdentifier({node}:{node:Identifier}) {
-    return <div className="Identifier">{node.getText()}</div>
+export default function AstIdentifier({node}:{node:Identifier}) {
+    return <span className="Identifier">{node.getText()}</span>
 }
 
-export default AstIdentifier;

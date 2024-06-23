@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ArrayBindingPattern, Identifier, Node, StringLiteral, SyntaxKind, SyntaxList, VariableDeclaration, VariableStatement } from "ts-morph"
+import { ArrayBindingPattern, FunctionDeclaration, FunctionExpression, Identifier, Node, StringLiteral, SyntaxKind, SyntaxList, VariableDeclaration, VariableStatement } from "ts-morph"
 import AstSyntaxList from "./AstSyntaxList";
 import AstVariableStatement from "./AstVariableStatement";
 import AstKeyword from "./AstKeyword";
@@ -9,6 +9,8 @@ import AstIdentifier from "./AstIdentifier";
 import AstToken from "./AstToken";
 import AstSingleLineCommentTrivia from "./AstSingleLineCommentTrivia";
 import AstArrayBindingPattern from "./AstArrayBindingPattern";
+import AstFunctionExpression from "./AstFunctionExpression";
+import AstFunctionDeclaration from "./AstFunctionDeclaration";
 
 const renderNode = (node:Node):ReactNode => {
     switch (node.getKind()) {
@@ -158,6 +160,8 @@ const renderNode = (node:Node):ReactNode => {
         case SyntaxKind.SyntaxList:                     return <AstSyntaxList node={node as SyntaxList} />;
         case SyntaxKind.VariableStatement:              return <AstVariableStatement node={node as VariableStatement} />
         case SyntaxKind.VariableDeclaration:            return <AstVariableDeclaration node={node as VariableDeclaration} />
+        case SyntaxKind.FunctionExpression:             return <AstFunctionExpression node={node as FunctionExpression} />
+        case SyntaxKind.FunctionDeclaration:            return <AstFunctionDeclaration node={node as FunctionDeclaration} />
         default:
             return <ul>
                 <li>{node.getKindName()}</li>

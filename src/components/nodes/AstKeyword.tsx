@@ -1,7 +1,5 @@
 import { Node } from "ts-morph";
 
-function AstKeyword({keyword, node}: {keyword: string, node:Node}) {
-    return <div>{keyword}</div>;
+export default function AstKeyword({keyword, node}: {keyword: string, node:Node}) {
+    return <span className="Keyword">{keyword}</span>;
 }
-
-export default AstKeyword;

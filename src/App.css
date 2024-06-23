@@ -41,6 +41,39 @@
   color: #888;
 }
 
-.AstNode {
-  border: 1px dashed red;
+.Keyword {
+  color: rgb(118, 169, 201);
+}
+
+.Token {
+  color: lightslategray;
+}
+
+.StringLiteral {
+  color: rgb(192, 139, 41);
+}
+
+.Identifier {
+  padding-inline-start: 0.3em;
+  padding-inline-end: 0.3em;
+}
+
+.FunctionDeclaration {
+  border: 1px dashed rgb(126, 8, 8);
+}
+
+.SyntaxList {
+  display: inline-block;
+}
+
+.ArrayBindingPattern {
+  display: inline-block;
+}
+
+.SingleLineCommentTrivia {
+  color: rgb(31, 107, 31);
+}
+
+.MultiLineCommentTrivia {
+  color: rgb(58, 122, 58);
 }
