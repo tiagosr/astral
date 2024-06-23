@@ -59,11 +59,11 @@
 }
 
 .FunctionDeclaration {
-  border: 1px dashed rgb(126, 8, 8);
+  /* border: 1px dashed rgb(126, 8, 8); */
 }
 
 .SyntaxList {
-  border: 1px dotted yellowgreen;
+  /*border: 1px dotted yellowgreen;*/
   display: inline-block;
 }
 

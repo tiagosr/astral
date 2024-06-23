@@ -22,6 +22,7 @@ import AstBlock from "./AstBlock";
 import AstReturnStatement from "./AstReturnStatement";
 import AstVariableDeclarationList from "./AstVariableDeclarationList";
 import AstArrowFunction from "./AstArrowFunction";
+import AstMultiLineCommentTrivia from "./AstMultiLineCommentTrivia";
 
 const renderNode = (node:Node):ReactNode => {
     switch (node.getKind()) {
@@ -164,6 +165,7 @@ const renderNode = (node:Node):ReactNode => {
         case SyntaxKind.WithKeyword:                    return <AstKeyword keyword="with" node={node} />;
         case SyntaxKind.YieldKeyword:                   return <AstKeyword keyword="yield" node={node} />;
         case SyntaxKind.SingleLineCommentTrivia:        return <AstSingleLineCommentTrivia node={node} />;
+        case SyntaxKind.MultiLineCommentTrivia:         return <AstMultiLineCommentTrivia node={node} />;
         case SyntaxKind.EndOfFileToken:                 return <></>;
         case SyntaxKind.Identifier:                     return <AstIdentifier node={node as Identifier} />;
         case SyntaxKind.StringLiteral:                  return <AstStringLiteral node={node as StringLiteral} />;
