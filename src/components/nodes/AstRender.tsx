@@ -17,11 +17,16 @@ const renderNode = (node:Node):ReactNode => {
         case SyntaxKind.DotToken:                       return <AstToken   token="." node={node} />
         case SyntaxKind.DotDotDotToken:                 return <AstToken   token="..." node={node} />
         case SyntaxKind.SemicolonToken:                 return <AstToken   token=";" node={node} />
+        case SyntaxKind.ColonToken:                     return <AstToken   token=":" node={node} />
+        case SyntaxKind.AtToken:                        return <AstToken   token="@" node={node} />
         case SyntaxKind.QuestionDotToken:               return <AstToken   token="?." node={node} />
         case SyntaxKind.QuestionQuestionToken:          return <AstToken   token="??" node={node} />
+        case SyntaxKind.QuestionQuestionEqualsToken:    return <AstToken   token="??=" node={node} />
+        case SyntaxKind.EqualsToken:                    return <AstToken   token="=" node={node} />
         case SyntaxKind.EqualsEqualsToken:              return <AstToken   token="==" node={node} />
         case SyntaxKind.EqualsEqualsEqualsToken:        return <AstToken   token="===" node={node} />
         case SyntaxKind.EqualsGreaterThanToken:         return <AstToken   token="=>" node={node} />
+        case SyntaxKind.ExclamationToken:               return <AstToken   token="!" node={node} />
         case SyntaxKind.ExclamationEqualsToken:         return <AstToken   token="!=" node={node} />
         case SyntaxKind.LessThanToken:                  return <AstToken   token="<" node={node} />
         case SyntaxKind.LessThanEqualsToken:            return <AstToken   token="<=" node={node} />
@@ -38,7 +43,9 @@ const renderNode = (node:Node):ReactNode => {
         case SyntaxKind.MinusMinusToken:                return <AstToken   token="--" node={node} />
         case SyntaxKind.MinusEqualsToken:               return <AstToken   token="-=" node={node} />
         case SyntaxKind.AsteriskToken:                  return <AstToken   token="*" node={node} />
+        case SyntaxKind.AsteriskAsteriskToken:          return <AstToken   token="**" node={node} />
         case SyntaxKind.AsteriskEqualsToken:            return <AstToken   token="*=" node={node} />
+        case SyntaxKind.AsteriskAsteriskEqualsToken:    return <AstToken   token="**=" node={node} />
         case SyntaxKind.SlashToken:                     return <AstToken   token="/" node={node} />
         case SyntaxKind.SlashEqualsToken:               return <AstToken   token="/=" node={node} />
         case SyntaxKind.PercentToken:                   return <AstToken   token="%" node={node} />
@@ -51,13 +58,17 @@ const renderNode = (node:Node):ReactNode => {
         case SyntaxKind.BarBarToken:                    return <AstToken   token="||" node={node} />
         case SyntaxKind.BarEqualsToken:                 return <AstToken   token="|=" node={node} />
         case SyntaxKind.BarBarEqualsToken:              return <AstToken   token="||=" node={node} />
+        case SyntaxKind.TildeToken:                     return <AstToken   token="~" node={node} />
+        case SyntaxKind.CaretToken:                     return <AstToken   token="^" node={node} />
+        case SyntaxKind.CaretEqualsToken:               return <AstToken   token="^=" node={node} />
         case SyntaxKind.OpenBracketToken:               return <AstToken   token="[" node={node} />
         case SyntaxKind.CloseBracketToken:              return <AstToken   token="]" node={node} />
         case SyntaxKind.OpenBraceToken:                 return <AstToken   token="{" node={node} />
         case SyntaxKind.CloseBraceToken:                return <AstToken   token="}" node={node} />
         case SyntaxKind.OpenParenToken:                 return <AstToken   token="(" node={node} />
         case SyntaxKind.CloseParenToken:                return <AstToken   token=")" node={node} />
-        case SyntaxKind.EqualsToken:                    return <AstToken   token="=" node={node} />
+        case SyntaxKind.BacktickToken:                  return <AstToken   token="`" node={node} />
+        case SyntaxKind.HashToken:                      return <AstToken   token="#" node={node} />
         case SyntaxKind.AbstractKeyword:                return <AstKeyword keyword="abstract" node={node} />;
         case SyntaxKind.AccessorKeyword:                return <AstKeyword keyword="accessor" node={node} />;
         case SyntaxKind.AnyKeyword:                     return <AstKeyword keyword="any" node={node} />;
@@ -101,12 +112,14 @@ const renderNode = (node:Node):ReactNode => {
         case SyntaxKind.IsKeyword:                      return <AstKeyword keyword="is" node={node} />;
         case SyntaxKind.KeyOfKeyword:                   return <AstKeyword keyword="keyof" node={node} />;
         case SyntaxKind.LetKeyword:                     return <AstKeyword keyword="let" node={node} />;
+        case SyntaxKind.ModuleKeyword:                  return <AstKeyword keyword="module" node={node} />;
         case SyntaxKind.NamespaceKeyword:               return <AstKeyword keyword="namespace" node={node} />;
         case SyntaxKind.NeverKeyword:                   return <AstKeyword keyword="never" node={node} />;
         case SyntaxKind.NewKeyword:                     return <AstKeyword keyword="new" node={node} />;
         case SyntaxKind.NullKeyword:                    return <AstKeyword keyword="null" node={node} />;
         case SyntaxKind.NumberKeyword:                  return <AstKeyword keyword="number" node={node} />;
         case SyntaxKind.ObjectKeyword:                  return <AstKeyword keyword="object" node={node} />;
+        case SyntaxKind.OfKeyword:                      return <AstKeyword keyword="of" node={node} />;
         case SyntaxKind.OutKeyword:                     return <AstKeyword keyword="out" node={node} />;
         case SyntaxKind.OverrideKeyword:                return <AstKeyword keyword="override" node={node} />;
         case SyntaxKind.PackageKeyword:                 return <AstKeyword keyword="package" node={node} />;
