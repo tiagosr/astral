@@ -63,6 +63,7 @@
 }
 
 .SyntaxList {
+  border: 1px dotted yellowgreen;
   display: inline-block;
 }
 
